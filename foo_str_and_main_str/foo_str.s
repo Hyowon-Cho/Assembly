@@ -16,7 +16,7 @@ foo:
 	movq	%rsp, %rbp # %rbq <- %rsp 
 
 	subq	$8, %rsp #8바이트의 로컬 변수 공간을 스택에 확보합니다.
-	movq	%rdi, -8(%rbp) # %
+	movq	%rdi, -8(%rbp) 
 
 	jmp		.LOOP_TEST
 
