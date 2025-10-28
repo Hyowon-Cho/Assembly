@@ -1,8 +1,8 @@
 //===============================================
 // Matt Kretchmar
 // October 2025
-// ops.c
-// This program tests different math operators 
+// ifStmt.c
+// This program tests if statements 
 //==============================================
 
 #include <stdio.h>
@@ -21,7 +21,7 @@ int main ( void )
 
 	int c = foo(a,b);
 	printf("c = 0x%08X\n",c);
-
+	
 	return 0;
 }
 
