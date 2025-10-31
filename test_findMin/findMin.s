@@ -25,6 +25,7 @@ main:
 	movl	$-2, -20(%rbp)
 	movl	$10, -16(%rbp)
 	movl	$4, -12(%rbp)
+	
 	movl	$6, -40(%rbp)
 	movl	-40(%rbp), %edx
 	leaq	-32(%rbp), %rax

@@ -12,21 +12,32 @@
 	.type	main, @function
 main:
 .LFB0:
-	pushq	%rbp
+	pushq	%rbp # 이전 함수의 스택 기준점(%rbp)을 스택에 저장합니다.
 	movq	%rsp, %rbp
 	subq	$32, %rsp
+
+
 	movq	%fs:40, %rax
 	movq	%rax, -8(%rbp)
 	xorl	%eax, %eax
-	movl	$0, -16(%rbp)
+
+	movl	$0, -16(%rbp) # int total = 0;
+
+	# printf("Enter n (0 to 100):");
+
 	leaq	.LC0(%rip), %rdi
 	movl	$0, %eax
 	call	printf@PLT
+ 
+ 	# ------------------------
+
 	leaq	-20(%rbp), %rax
 	movq	%rax, %rsi
 	leaq	.LC1(%rip), %rdi
 	movl	$0, %eax
 	call	__isoc99_scanf@PLT
+
+	
 	movl	$1, -12(%rbp)
 	jmp	.L2
 .L3:
@@ -37,6 +48,8 @@ main:
 	movl	-20(%rbp), %eax
 	cmpl	%eax, -12(%rbp)
 	jle	.L3
+
+	
 	movl	-16(%rbp), %eax
 	movl	%eax, %esi
 	leaq	.LC2(%rip), %rdi
